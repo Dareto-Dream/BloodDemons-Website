@@ -1,7 +1,41 @@
+body {
+  background-color: #121212;
+  color: #B3B3B3;
+}
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #181818;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
 
 
 /* for the server check  */
+
 
 .header {
   position: relative;
@@ -59,5 +93,5 @@
 #rest {
   padding: 30px 15px;
   line-height: 30px;
-  color: #000d42
+  color: white
 }
