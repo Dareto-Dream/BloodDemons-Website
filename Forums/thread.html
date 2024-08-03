@@ -5,43 +5,86 @@
 
 
 	<body>
+		<a href="forum.html">&lt;~ Back</a>
 		<div class="top-bar">
 			<h1>
 				My Forum
 			</h1>
 		</div>
 		<div class="main">
-		<div class="header">
-			<h4 class="title">
-				Thread 1
-			</h4>
-			<div class="bottom">
-				<p class="timestamp">
-					8/3/2024
-				</p>
-				<p class="comment-count">
-					4 comments
-				</p>
+			<div class="header">
+			</div>
+			
+			<textarea></textarea>
+			<button>add comment</button>
+			
+			<div class="comments">
 			</div>
 		</div>
-		<textarea></textarea>
-		<button>add comment</button>
-		<div class="comments">
-			<div class="comment">
-				<div class"top-comment">
-					<p class="user">
-						Aaron
+		
+		
+		
+		<!--- scripts --->
+		<script src="data.js"></script>
+		<script>
+			var id = window.location.search.slice(4);
+			var thread = threads.find(t => t.id == id);
+			var header = document.querySelector('.header');
+			var headerHtml = `
+				<h4 class="title">
+					${thread.title}
+				</h4>
+				<div class="bottom">
+					<p class="timestamp">
+						${new Date(thread.date).toLocaleString()}
 					</p>
-					<p class="comment-ts">
-						8/3/2024
+					<p class="comment-count">
+						${thread.comments.length} comments
 					</p>
 				</div>
-				<div class="comment-content">
-					Comment text here
-				</div>
-			</div>
-		</div>
-		</div>
+			`
+			header.insertAdjacentHTML('beforeend', headerHtml);
+			
+			function addComment(comment) {
+				var commentHtml = `
+					<div class="comment">
+						<div class"top-comment">
+							<p class="user">
+								${comment.author}
+							</p>
+							<p class="comment-ts">
+								${new Date(comment.date).toLocaleString()}
+							</p>
+						</div>
+						<div class="comment-content">
+							${comment.content}
+						</div>
+					</div>
+				`
+				comments.insertAdjacentHTML('beforeend', commentHtml);
+			}
+			
+			var comments = document.querySelector('.comments');
+			
+			for (let comment of thread.comments) {
+				addComment(comment);
+			}
+			
+			var btn = document.querySelector('button');
+			btn.addEventListener('click', function() {
+				var txt = document.querySelector('textarea');
+				var comment = {
+					content: txt.value,
+					date: Date.now(),
+					author: 'Anonymous'
+				}
+				addComment(comment);
+				txt.value=''
+				thread.comments.push(comment);
+				localStorage.setItem('threads', JSON.stringify(threads));
+			})
+		</script>
+		
 		<style>
 			body {
 				margin: 10px;
