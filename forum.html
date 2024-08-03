@@ -9,11 +9,11 @@
 		
 		<link rel="website icon" type="png" href="Files/Images/favicon.png">
 		
-		<link rel="stylesheet" href="Files/styles.css">
+		<link rel="stylesheet" href="Files/forumStyles.css">
 	</head>
 	
 	<body>
-		<ul>
+		<ul class="navbar">
 			<li><a href="index.html">Home</a></li>
 			<li><a href="news.html">News</a></li>
 			<li><a href="projects.html">Projects</a></li>
@@ -25,6 +25,85 @@
 		</ul>
 		
 		<!--- end of default code --->
+		
+		<!-- Forum Test -->
+		<div class="top-bar">
+			<h1>
+				My Forum
+			</h1>
+		</div>
+		<div class="main">
+		<ol>
+			<li class="row">
+				<a href="/item">
+					<h4 class="title">
+						Thread 1
+					</h4>
+					
+					<div class="bottom">
+						<p class="timestamp">
+							8/3/2024
+						</p>
+						<p class="comment-count">
+							4 comments
+						</p>
+					</div>
+				</a>
+			</li>
+			<li class="row">
+				<a href="/item">
+					<h4 class="title">
+						Thread 2
+					</h4>
+					
+					<div class="bottom">
+						<p class="timestamp">
+							8/2/2024
+						</p>
+						<p class="comment-count">
+							10 comments
+						</p>
+					</div>
+				</a>
+			</li>
+		</ol>
+		</div>
+		<style>
+			body {
+				margin: 10px;
+				background-color: #121212;
+			}
+			a {
+				text-decoration: none;
+				color: white;
+			}
+			h4 {
+				margin: 0;
+			}
+			p {
+				margin: 5px 0;
+			}
+			.top-bar {
+				color: #FFFFFF;
+				padding: 0 40px;
+			}
+			.main {
+				background-color: #181818;
+				padding: 10px 15px;
+			}
+			.row {
+				padding: 5px 0;
+				color: white;
+			}
+			.bottom {
+				display: flex;
+				color: gray;
+				font-size: 12px;
+			}
+			.timestamp {
+				padding-right: 10px;
+			}
+		</style>
 		
 	</body>
 </html>
