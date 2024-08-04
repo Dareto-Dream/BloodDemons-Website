@@ -19,12 +19,13 @@
 			<li><a href="..\projects.html">Projects</a></li>
 			<li><a href="..\team.html">Staff</a></li>
 			<li><a href="..\status.html">Server</a></li>
-			<li><a href="..\Forums\forum.html">Forum</a></li>
+			<li><a href="forum.html">Forum</a></li>
 			<li><a href="..\about.html">About</a></li>
 			<li><a href="..\contact.html">Contact</a></li>
 		</ul>
 		
 		<!--- end of default code --->
+
 		
 		<!-- Forum Test -->
 		<div class="top-bar">
@@ -41,7 +42,7 @@
 		
 		<script src="data.js"></script>
 		<script>
-			console.log(threads);
+			console.table(threads);
 			var container = document.querySelector('ol');
 			for (let thread of threads) {
 				var html = `

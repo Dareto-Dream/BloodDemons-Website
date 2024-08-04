@@ -33,9 +33,27 @@
 		<div class="image"> <img src="Files/Images/Status.png" alt="DareToDream Logo" /> </div>
 
 		<h2>DareToDream.zapto.org</h2>
-    <!-- put server name here !-->
 		</div>
-		<div id="rest">Loading ...</div>
+
+			<div class="rest">
+			</div>
 		</div>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+		<script src="Files/serverCheck.js"></script>
+		<script>
+			console.log(serverArray);
+			var container = document.querySelector('.rest');
+			
+			var html = `
+				<p>
+					${serverArray.description}
+				</p>
+				<p>
+					Ping latency: ${serverArray.latency}
+				</p>
+			`
+			container.insertAdjacentHTML('beforeend', html);
+			
+		</script>
 </html>
