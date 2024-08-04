@@ -51,6 +51,9 @@
 							${thread.title}
 						</h4>
 						<div class="bottom">
+							<p class="author">
+								Author: ${thread.author}
+							</p>
 							<p class="timestamp">
 								${new Date(thread.date).toLocaleString()}
 							</p>
@@ -98,6 +101,7 @@
 			}
 			.timestamp {
 				padding-right: 10px;
+				padding-left: 10px;
 			}
 		</style>
 		

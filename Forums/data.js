@@ -4,7 +4,7 @@ var threads = [
 		title: "Thread 1",
 		author: "Aaron",
 		date: Date.now(),
-		content: "Thread content",
+		content: "Simple",
 		comments: [
 			{
 				author: "Jack",
@@ -36,9 +36,32 @@ var threads = [
 				content: "Hey to you too"
 			}
 		]
+	},
+	{
+		id: 3,
+		title: "Thread 3",
+		author: "Aaron",
+		date: Date.now(),
+		content: "etc",
+		comments: [
+			{
+				author: "Jack",
+				date: Date.now(),
+				content: "Hey there"
+			},
+			{
+				author: "Arthur",
+				date: Date.now(),
+				content: "Hey to you too"
+			}
+		]
 	}
 ]
 
+if (false) {
+	threads = defaultThreads;
+	localStorage.setItem('threads', JSON.stringify(defaultThreads));
+}
 
 var threads;
 if (localStorage && localStorage.getItem('threads')) {
