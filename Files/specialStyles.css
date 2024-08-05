@@ -90,7 +90,7 @@ a {
   z-index: 9
 }
 
-#rest {
+.rest {
   padding: 30px 15px;
   line-height: 30px;
   color: white

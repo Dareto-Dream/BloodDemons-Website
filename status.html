@@ -25,15 +25,15 @@
 		<br>
 		
 		<h2>Vanilla Minecraft Java Server</h2>
-	</body>
-	<div class="card">
-		<div class="icon">
-			<img src="Files/Images/Head.jpg" id="favicon"></div>
-		<div class="header">
-		<div class="image"> <img src="Files/Images/Status.png" alt="DareToDream Logo" /> </div>
-
-		<h2>DareToDream.zapto.org</h2>
-		</div>
+	
+		<div class="card">
+			<div class="icon">
+				<img src="Files/Images/Head.jpg" id="favicon"></div>
+				<div class="header">
+					<div class="image"> <img src="Files/Images/Status.png" alt="DareToDream Logo" /> </div>
+					<h2>DareToDream.zapto.org</h2>
+				</div>
+			</div>
 
 			<div class="rest">
 			</div>
@@ -42,18 +42,45 @@
 		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
 		<script src="Files/serverCheck.js"></script>
 		<script>
-			console.log(serverArray);
-			var container = document.querySelector('.rest');
+			var url = 'https://api.minetools.eu/ping/daretodream.zapto.org';
+			var storedText;
+			var serverArray;
+
+			fetch(url)
+				.then(function(response) {
+			    	response.text().then(function(text) {
+    					storedText = text;
+    					done();
+    				});
+  				});
 			
-			var html = `
-				<p>
-					${serverArray.description}
-				</p>
-				<p>
-					Ping latency: ${serverArray.latency}
-				</p>
-			`
-			container.insertAdjacentHTML('beforeend', html);
+			function done() {
+				storedText = "[ \n" + storedText + '\n]';
+    			serverArray = JSON.parse(storedText);
+    			console.table(serverArray[0]);
 			
+				console.table(serverArray);
+				var container = document.querySelector('.rest');
+				var html = `
+					<p>
+						Server description: ${serverArray[0].description}
+					
+					<br>
+					
+						Ping latency: ${Math.round(serverArray[0].latency)}ms
+
+					<br>
+
+						${serverArray[0].players.online}/${serverArray[0].players.max} players online
+
+					<br>
+					<br>
+
+						The server is currently on ${serverArray[0].version.name} vanilla minecraft
+					</p>
+				`
+				container.insertAdjacentHTML('beforeend', html);
+			}
 		</script>
+	</body>
 </html>
