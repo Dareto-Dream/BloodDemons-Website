@@ -3,6 +3,12 @@
 
 <html>
 
+	<head>
+		<link rel="website icon" type="png" href="..\Files\Images\favicon.png">
+		<div class="tabs">
+
+		</div>
+	</head>
 
 	<body>
 		<a href="forum.html">&lt;~ Back</a>
@@ -42,12 +48,12 @@
 			var thread = threads.find(t => t.id == id);
 			var header = document.querySelector('.header');
 			var headerHtml = `
-				<h3 class="title">
+				<h2 class="title">
 					${thread.title}
-				</h3>
-				<h4 class="thread-content">
+				</h2>
+				<h3 class="thread-content">
 					${thread.content}
-				</h4>
+				</h3>
 				<div class="bottom">
 					<p class="timestamp">
 						${new Date(thread.date).toLocaleString()}
@@ -101,18 +107,37 @@
 				thread.comments.push(comment);
 				localStorage.setItem('threads', JSON.stringify(threads));
 			})
+
+
+			
+
+			var tabs = document.querySelector('.tabs');
+			var titleHtml = `
+				<title>
+					Forum thread | ${thread.title}
+					
+				</title>
+			`
+			tabs.insertAdjacentHTML('beforeend', titleHtml);
 		</script>
 		
 		<style>
 			body {
 				margin: 10px;
+				background-color: #121212;
 			}
 			a {
 				text-decoration: none;
-				color: black;
+				color: white;
 			}
-			h4 {
+			h2 {
 				margin: 0;
+				color: white;
+			}
+			h3 {
+				margin: 0;
+				color: #dddddd;
+				padding-top: 10px;
 			}
 			p {
 				margin: 5px 0;
@@ -122,18 +147,24 @@
 				margin: 10px 0;
 			}
 			.top-bar {
-				background-color: skyblue;
+				color: #FFFFFF;
 				padding: 0 40px;
 			}
 			.main {
-				background-color: #F6F6EF;
+				background-color: #181818;
 				padding: 10px 15px;
 			}
 			.comments {
 				margin: 40px 0;
+				background-color: #333;
 			}
 			.comment {
+				padding: 10px;
+				padding-left: 20px;
 				margin: 10px 0;
+				color: #eeeeee;
+				outline: auto;
+				outline-color: #121212;
 			}
 			.comment-input {
 				width: 80%;
@@ -148,8 +179,9 @@
 			}
 			.bottom, .top-comment {
 				display: flex;
-				color: gray;
+				color: #aeaeae;
 				font-size: 12px;
+				padding: 10px;
 			}
 			.timestamp {
 				padding-right: 10px;
