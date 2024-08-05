@@ -8,7 +8,7 @@
 		<a href="forum.html">&lt;~ Back</a>
 		<div class="top-bar">
 			<h1>
-				My Forum
+				Demonic Forum
 			</h1>
 		</div>
 		<div class="main">
@@ -17,6 +17,10 @@
 			
 			<textarea class="username-input"></textarea>
 			<textarea class="comment-input"></textarea>
+			<button class="g-recaptcha" 
+     	    data-sitekey="6LcQJCAqAAAAANKjotyVLsvOc4xv4yh9sR1prFUJ" 
+    	    data-callback='onSubmit' 
+     	    data-action='submit'>Verify</button>
 			<button>add comment</button>
 			
 			<div class="comments">
@@ -26,6 +30,13 @@
 		
 		
 		<!--- scripts --->
+		<script src="https://www.google.com/recaptcha/api.js"></script>
+		<script>
+			function onSubmit(token) {
+			  document.getElementById("demo-form").submit();
+			}
+		</script>
+
 		<script src="data.js"></script>
 		<script>
 			var id = window.location.search.slice(4);
