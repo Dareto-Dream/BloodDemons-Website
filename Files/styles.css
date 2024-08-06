@@ -42,7 +42,37 @@ a {
 	text-decoration: none;
 }
 
-button {
-	color: #B3B3B3;
-	text-decoration: none;
+.buttonFooter {
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+}
+
+#footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: 16px;
+  width: 100%;
+  background-color: #3b0000;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
