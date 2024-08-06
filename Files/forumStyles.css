@@ -51,3 +51,7 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+body {
+  color: #B3B3B3;
+}
