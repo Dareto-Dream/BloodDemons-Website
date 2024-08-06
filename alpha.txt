@@ -1,9 +1,2 @@
-rules_version = '2';
-
-service firebase.storage {
-  match /b/{bucket}/o {
-    match /{allPaths=**} {
-      allow read, write: if false;
-    }
-  }
-}
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-storage.js"></script>
+		<script src="..\Files\main.js"></script>

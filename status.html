@@ -76,12 +76,25 @@
 						${serverArray[0].players.online}/${serverArray[0].players.max} players online
 
 					<br>
+						
+						People Online: <p class="players"></p>
+
+					<br>
 					<br>
 
 						The server is currently on ${serverArray[0].version.name} vanilla minecraft
 					</p>
 				`
 				container.insertAdjacentHTML('beforeend', html);
+
+				var playerPeople = document.querySelector('.players');
+
+				for(let player of serverArray[0].players.sample) {
+					var playerHtml = `
+						<p>${player.name}, </p>
+					`
+					playerPeople.insertAdjacentHTML('beforeend', playerHtml);
+				}
 			}
 		</script>
 
