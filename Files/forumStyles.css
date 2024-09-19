@@ -1,18 +1,4 @@
-body {
-  background-color: #121212;
-  color: #B3B3B3;
-}
-h1 {
-  color: #FFFFFF;
-  text-align: center;
-}
-div.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  padding: 5px;
-}
-ul {
+.navbar {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -20,11 +6,11 @@ ul {
   background-color: #181818;
 }
 
-li {
+.navbar li {
   float: left;
 }
 
-li a {
+.navbar li a {
   display: block;
   color: white;
   text-align: center;
@@ -33,19 +19,8 @@ li a {
 }
 
 /* Change the link color to #111 (black) on hover */
-li a:hover {
+.navbar li a:hover {
   background-color: #111;
-}
-
-a {
-	color: white;
-	text-decoration: none;
-}
-
-.buttonFooter {
-  color: white;
-  padding: 5px;
-  text-decoration: none;
 }
 
 #footer {
@@ -75,4 +50,8 @@ a {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+body {
+  color: #B3B3B3;
 }

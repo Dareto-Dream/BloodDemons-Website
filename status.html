@@ -16,7 +16,7 @@
 			<li><a href="projects.html">Projects</a></li>
 			<li><a href="team.html">Staff</a></li>
 			<li><a href="status.html">Server</a></li>
-			<li><a href="forum.html">Forum</a></li>
+			<li><a href="Forums\forum.html">Forum</a></li>
 			<li><a href="about.html">About</a></li>
 			<li><a href="contact.html">Contact</a></li>
 		</ul>
@@ -25,17 +25,84 @@
 		<br>
 		
 		<h2>Vanilla Minecraft Java Server</h2>
-	</body>
-	<div class="card">
-		<div class="icon">
-			<img src="Files/Images/Head.jpg" id="favicon"></div>
-		<div class="header">
-		<div class="image"> <img src="Files/Images/Status.png" alt="DareToDream Logo" /> </div>
+	
+		<div class="card">
+			<div class="icon">
+				<img src="Files/Images/Head.jpg" id="favicon"></div>
+				<div class="header">
+					<div class="image"> <img src="Files/Images/Status.png" alt="DareToDream Logo" /> </div>
+					<h2>DareToDream.zapto.org</h2>
+				</div>
+			</div>
 
-		<h2>DareToDream.zapto.org</h2>
-    <!-- put server name here !-->
+			<div class="rest">
+			</div>
 		</div>
-		<div id="rest">Loading ...</div>
+
+		
+		<script src="Files/serverCheck.js"></script>
+		<script>
+			var url = 'https://api.minetools.eu/ping/daretodream.zapto.org';
+			var storedText;
+			var serverArray;
+
+			fetch(url)
+				.then(function(response) {
+			    	response.text().then(function(text) {
+    					storedText = text;
+    					done();
+    				});
+  				});
+			
+			function done() {
+				storedText = "[ \n" + storedText + '\n]';
+    			serverArray = JSON.parse(storedText);
+    			console.table(serverArray[0]);
+			
+				console.table(serverArray);
+				var container = document.querySelector('.rest');
+				var html = `
+					<img src="${serverArray[0].favicon}" width="64px" height="auto">
+					<br>
+					<p>
+						Server description: ${serverArray[0].description}
+					
+					<br>
+					
+						Ping latency: ${Math.round(serverArray[0].latency)}ms
+
+					<br>
+
+						${serverArray[0].players.online}/${serverArray[0].players.max} players online
+
+					<br>
+						
+						People Online: <p class="players"></p>
+
+					<br>
+					<br>
+
+						The server is currently on ${serverArray[0].version.name} vanilla minecraft
+					</p>
+				`
+				container.insertAdjacentHTML('beforeend', html);
+
+				var playerPeople = document.querySelector('.players');
+
+				for(let player of serverArray[0].players.sample) {
+					var playerHtml = `
+						<p>${player.name}, </p>
+					`
+					playerPeople.insertAdjacentHTML('beforeend', playerHtml);
+				}
+			}
+		</script>
+
+		<!-- footer start -->
+
+		<div id="footer">
+			<a class="buttonFooter" href="https://discord.gg/GtpgNeJTRA">Discord</a> | <a class="buttonFooter" href="rules.html">Guidelines</a>
 		</div>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		
+	</body>
 </html>

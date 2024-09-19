@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Blood Demons | Forums</title>
+		
+		<meta name="description" content="a small website for a small creator">
+		<meta name="keywords" content="Daretodream DareTo Dream Dare Dream  dareto0ream Youtube Discord DiscordServer URL Forum">
+		
+		<link rel="website icon" type="png" href="..\Files\Images\favicon.png">
+		
+		<link rel="stylesheet" href="..\Files\forumStyles.css">
+
+		
+	</head>
+	
+	<body>
+		<ul class="navbar">
+			<li><a href="..\index.html">Home</a></li>
+			<li><a href="..\news.html">News</a></li>
+			<li><a href="..\projects.html">Projects</a></li>
+			<li><a href="..\team.html">Staff</a></li>
+			<li><a href="..\status.html">Server</a></li>
+			<li><a href="forum.html">Forum</a></li>
+			<li><a href="..\about.html">About</a></li>
+			<li><a href="..\contact.html">Contact</a></li>
+		</ul>
+		
+		<!--- end of default code --->
+
+		
+		<!-- Forum Test -->
+		<div class="top-bar">
+			<h1>
+				Demonic Forum
+			</h1>
+		</div>
+		<div class="main">
+			<ol>
+			</ol>
+		</div>
+		
+		<!--- Forum filler scripts --->
+		
+		<script src="data.js"></script>
+		<script>
+			console.table(threads);
+			var container = document.querySelector('ol');
+			for (let thread of threads) {
+				var html = `
+				<li class="row">
+					<a href="thread.html?id=${thread.id}">
+						<h4 class="title">
+							${thread.title}
+						</h4>
+						<div class="bottom">
+							<p class="author">
+								Author: ${thread.author}
+							</p>
+							<p class="timestamp">
+								${new Date(thread.date).toLocaleString()}
+							</p>
+							<p class="comment-count">
+								${thread.comments.length} comments
+							</p>
+						</div>
+					</a>
+				</li>
+				`
+				container.insertAdjacentHTML('beforeend', html);
+			}
+		</script>
+		<style>
+			body {
+				margin: 10px;
+				background-color: #121212;
+			}
+			a {
+				text-decoration: none;
+				color: white;
+			}
+			h4 {
+				margin: 0;
+			}
+			p {
+				margin: 5px 0;
+			}
+			.top-bar {
+				color: #FFFFFF;
+				padding: 0 40px;
+			}
+			.main {
+				background-color: #181818;
+				padding: 10px 15px;
+			}
+			.row {
+				padding: 5px 0;
+				color: white;
+			}
+			.bottom {
+				display: flex;
+				color: gray;
+				font-size: 12px;
+			}
+			.timestamp {
+				padding-right: 10px;
+				padding-left: 10px;
+			}
+		</style>
+		
+		<!-- footer start -->
+
+		<div id="footer">
+			<a class="buttonFooter" href="https://discord.gg/GtpgNeJTRA">Discord</a> | <a class="buttonFooter" href="..\rules.html">Guidelines</a>
+		</div>
+
+	</body>
+</html>
