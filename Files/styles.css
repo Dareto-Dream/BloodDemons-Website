@@ -76,3 +76,7 @@ a {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.buy {
+  float: right;
+}
