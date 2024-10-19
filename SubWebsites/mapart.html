@@ -12,5 +12,27 @@
 	<body>
 		<ul>
 			<li><a href="../projects.html">&lt;- Back</a></li>
+        </ul>
+
+        <div class="container" style="  border: 5px solid; margin: auto; width: 50%; padding: 10px;">
+			<h2>The Project</h2>
+			<p>This Project is made in our modded <a href="../status.html">minecraft server</a> and is Completed</p>
+			<h2>Project Progress</h2>
+
+			<br>
+
+			<progress id="progressBar" value="100" max="100"> 100% </progress>
+			<p id="progress"></p>
+
+			<br>
+			
+			<p>Minecraft Server: daretodream.zapto.org <a href="http://daretodream.zapto.org:8123">Server Map</a></p>
+		</div>
+
 	</body>
+
+	<script>
+		var x = document.getElementById("progressBar").value;
+ 		document.getElementById("progress").innerHTML = x.toString() + "% complete";
+	</script>
 </html>

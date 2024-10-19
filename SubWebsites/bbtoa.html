@@ -18,10 +18,23 @@
 			<h2>The Project</h2>
 			<p>This Project is made in Unity and is still a work in progress if you want to help apply at <a href="team.html">Staff</a></p>
 			<h2>Project Progress</h2>
+
+			<br>
+
+			<progress id="progressBar" value="10" max="100"> 10% </progress>
+			<p id="progress"></p>
+
+			<br>
+			
 			<p>GitHub Page: <a href="https://github.com/Dareto-Dream/BbToA">Bound by Ties of Affection</a></p>
 			<p>Download: <a href="https://github.com/Dareto-Dream">Not done (no download)</a></p>
 			<img src="..\Files\Images\BbToA.png" alt="Heart With Chains" width="100%" height="750">
 		</div>
 
 	</body>
+
+	<script>
+		var x = document.getElementById("progressBar").value;
+ 		document.getElementById("progress").innerHTML = x.toString() + "% complete";
+	</script>
 </html>
