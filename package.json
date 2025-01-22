@@ -1,0 +1,32 @@
+{
+  "name": "blooddemons-website",
+  "version": "1.0.0",
+  "description": "A small website for a small creator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dareto-Dream/BloodDemons-Website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dareto-Dream/BloodDemons-Website/issues"
+  },
+  "homepage": "https://github.com/Dareto-Dream/BloodDemons-Website#readme",
+  "devDependencies": {
+    "@aws-amplify/backend": "^1.13.0",
+    "@aws-amplify/backend-cli": "^1.4.7",
+    "aws-cdk": "^2.176.0",
+    "aws-cdk-lib": "^2.176.0",
+    "constructs": "^10.4.2",
+    "esbuild": "^0.24.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "aws-amplify": "^6.12.1"
+  }
+}
