@@ -39,6 +39,21 @@
 			</div>
 		</div>
 
+		<h2>Vanilla Minecraft Java Server</h2>
+	
+		<div class="card2">
+			<div class="icon2">
+				<img src="Files/Images/Head.jpg" id="favicon"></div>
+				<div class="header">
+					<a href="SubWebsites/downloads.html"><div class="image"> <img src="Files/Images/Status.png" alt="DareToDream Logo" /> </div></a>
+					<h2>io.prettymid.scalacube.info</h2>
+				</div>
+			</div>
+
+			<div class="rest2">
+			</div>
+		</div>
+
 		
 		<script src="Files/serverCheck.js"></script>
 		<script>
@@ -97,6 +112,63 @@
 				}
 			}
 		</script>
+
+	<script>
+		var url = 'https://api.minetools.eu/ping/io.prettymid.scalacube.info';
+		var storedText;
+		var serverArray;
+
+		fetch(url)
+			.then(function(response) {
+				response.text().then(function(text) {
+					storedText = text;
+					done();
+				});
+			});
+		
+		function done() {
+			storedText = "[ \n" + storedText + '\n]';
+			serverArray = JSON.parse(storedText);
+			console.table(serverArray[0]);
+		
+			console.table(serverArray);
+			var container = document.querySelector('.rest2');
+			var html = `
+				<img src="${serverArray[0].favicon}" width="64px" height="auto">
+				<br>
+				<p>
+					Server description: ${serverArray[0].description}
+				
+				<br>
+				
+					Ping latency: ${Math.round(serverArray[0].latency)}ms
+
+				<br>
+
+					${serverArray[0].players.online}/${serverArray[0].players.max} players online
+
+				<br>
+					
+					People Online: <p class="players2"></p>
+
+				<br>
+				<br>
+
+					The server is currently on ${serverArray[0].version.name} vanilla minecraft
+				</p>
+			`
+			container.insertAdjacentHTML('beforeend', html);
+
+			var playerPeople = document.querySelector('.players2');
+
+			for(let player of serverArray[0].players.sample) {
+				var playerHtml = `
+					<p>${player.name}, </p>
+				`
+				playerPeople.insertAdjacentHTML('beforeend', playerHtml);
+			}
+		}
+	</script>
 
 		<!-- footer start -->
 
