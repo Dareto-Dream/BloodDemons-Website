@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10ed5cf0-5790-4f4b-a906-1aa1d4c4f8f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/google/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/google/features.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/google/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/google/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/google/style.css" afterDir="false" />
+    <list default="true" id="10ed5cf0-5790-4f4b-a906-1aa1d4c4f8f7" name="Changes" comment="google stuf">
+      <change afterPath="$PROJECT_DIR$/google/privacy.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,11 +63,24 @@
       <updated>1734574239939</updated>
       <workItem from="1734574241632" duration="86000" />
       <workItem from="1740420062469" duration="143000" />
-      <workItem from="1741514437777" duration="3467000" />
+      <workItem from="1741514437777" duration="4079000" />
     </task>
+    <task id="LOCAL-00001" summary="google stuf">
+      <option name="closed" value="true" />
+      <created>1741518430589</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1741518430589</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="google stuf" />
+    <option name="LAST_COMMIT_MESSAGE" value="google stuf" />
   </component>
 </project>

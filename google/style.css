@@ -136,3 +136,25 @@ footer {
 .contact-form button:hover {
     background-color: #0a96b3;
 }
+
+.privacy-content {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.privacy-content h2 {
+    color: #0db9d7;
+    margin-top: 20px;
+}
+
+.privacy-content ul {
+    padding-left: 20px;
+}
+
+.privacy-content p {
+    line-height: 1.6;
+}
